@@ -1,1 +1,1 @@
-alert("learned");
+alert("learned twice");
