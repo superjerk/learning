@@ -3,12 +3,12 @@ body {
     margin: 0px;
 }
 .space {
-    height: 50vh;
+    height: 55vh;
     background-color: #000000;
     border: 1px solid #CCCCCC;
 }
 .sheet {
     border: 1px solid #CCCCCC;
-    height: 50vh;
+    height: 45vh;
     background-color: #87CEEB;
 }
