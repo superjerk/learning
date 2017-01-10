@@ -1,5 +1,4 @@
 function codeAddress() {
-    alert("learned twice");
     var canvas = document.getElementById("starfield"),
     context = canvas.getContext("2d"),
     stars = 200;
