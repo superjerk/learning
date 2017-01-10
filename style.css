@@ -12,3 +12,6 @@ body {
     height: 45vh;
     background-color: #87CEEB;
 }
+canvas {
+    background: #111;
+}
