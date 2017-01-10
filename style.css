@@ -23,4 +23,6 @@ canvas {
     border: 1px solid #CCCCCC;
     background-color: #CCCCCC;
     padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
