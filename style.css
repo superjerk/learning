@@ -5,6 +5,7 @@ body {
 .space {
     height: 50vh;
     background-color: #000000;
+    border: 1px solid #CCCCCC;
 }
 .sheet {
     border: 1px solid #CCCCCC;
