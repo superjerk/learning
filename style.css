@@ -16,5 +16,6 @@ canvas {
     background: #111;
 }
 #ship td {
-    border: 1px solid #CCCCCC;   
+    border: 1px solid #CCCCCC;
+    background-color: #CCCCCC;
 }
