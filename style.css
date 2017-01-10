@@ -15,6 +15,6 @@ body {
 canvas {
     background: #111;
 }
-#ship tr {
+#ship td {
     border: 1px solid #CCCCCC;   
 }
