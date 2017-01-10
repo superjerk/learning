@@ -6,6 +6,7 @@ body {
     background-color: #000000;
 }
 .sheet {
+    border: 1px solid black;
     height: 50vh;
     background-color: #87CEEB;
 }
