@@ -16,9 +16,11 @@ canvas {
     background: #111;
 }
 #ship {
+    padding: 15px;
     margin: 0 auto;
 }
 #ship td {
     border: 1px solid #CCCCCC;
     background-color: #CCCCCC;
+    padding: 5px;
 }
