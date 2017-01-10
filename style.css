@@ -1,12 +1,13 @@
 body {
     background-color: #cccccc;
+    margin: 0px;
 }
 .space {
     height: 50vh;
     background-color: #000000;
 }
 .sheet {
-    border: 1px solid black;
+    border: 1px solid #000000;
     height: 50vh;
     background-color: #87CEEB;
 }
