@@ -1,6 +1,10 @@
 function codeAddress() {
-    var canvas = document.getElementById("starfield"),
-    context = canvas.getContext("2d"),
+    var canvas = document.getElementById("starfield");
+    canvas.style.width='100%';
+    canvas.style.height='100%';
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    context = canvas.getContext("2d");
     stars = 200;
     for (var i = 0; i < stars; i++) {
         x = Math.random() * canvas.offsetWidth;
