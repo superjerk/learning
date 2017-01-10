@@ -1,6 +1,9 @@
 body {
-    background-color: #87CEEB;
+    background-color: #cccccc;
 }
-#main {
-    
+.space {
+    background-color: #000000;
+}
+.sheet {
+    background-color: #87CEEB;
 }
