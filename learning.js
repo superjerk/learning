@@ -1,8 +1,8 @@
 function getRandom(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-function procClick(click) {
-        console.log(click);       
+function procClick(this) {
+       alert(this.id);       
 }
 function initpage() {
         //create canvas
@@ -29,6 +29,9 @@ function initpage() {
         Object.keys(shipparts).forEach(function(key) {
                 document.body.insertAdjacentHTML('beforeend','<div id="' + key + '-jqdd" class="jq-dropdown jq-dropdown-tip"><ul class="jq-dropdown-menu"><li><a href="#" id="' + shipparts[key][0] +'">' + shipparts[key][0] + '</a></li><li><a href="#" id="' + shipparts[key][1] +'">' + shipparts[key][1] + '</a></li><li><a href="#" id="' + shipparts[key][2] +'">' + shipparts[key][2] + '</a></li><li><a href="#" id="' + shipparts[key][3] +'">' + shipparts[key][3] + '</a></li></ul></div>');            
                 $('#' + shipparts[key][0]).click( function(e) {e.preventDefault(); procClick(this); return false; } );
+                $('#' + shipparts[key][1]).click( function(e) {e.preventDefault(); procClick(this); return false; } );
+                $('#' + shipparts[key][2]).click( function(e) {e.preventDefault(); procClick(this); return false; } );
+                $('#' + shipparts[key][3]).click( function(e) {e.preventDefault(); procClick(this); return false; } );
                 document.getElementById("shipsheet").insertAdjacentHTML('beforeend','<div id="' + key + '" class="dd" data-jq-dropdown="#' + key + '-jqdd">' + key + '</div>');
         });
 }
