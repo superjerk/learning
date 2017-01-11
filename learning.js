@@ -1,8 +1,8 @@
 function getRandom(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-function procClick(this) {
-       alert(this.id);       
+}
+function procClick(click) {
+       alert(click.id);       
 }
 function initpage() {
         //create canvas
