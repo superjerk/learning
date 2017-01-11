@@ -25,6 +25,7 @@ canvas {
     border: 2px solid black;
     user-select: none;
     width: 50px;
+    text-align: center;
 }
 .dd:hover {
    border-color: red;
