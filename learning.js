@@ -2,7 +2,8 @@ function getRandom(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 function procClick(click) {
-       console.log(click.id);       
+       console.log(click.id);
+       $('trigger').jqDropdown('hide',click.parentElement.parentElement.parentElement) 
 }
 function initpage() {
         //create canvas
