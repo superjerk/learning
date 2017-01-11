@@ -25,7 +25,9 @@ canvas {
     display: inline-block;
     background-color: #CCCCCC;
     color: #111111;
-    font: .8em, arial, sans-serif;
+    font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+	font-size: .7em;
+	font-style: normal;
     border: 2px solid black;
     user-select: none;
     width: 50px;
