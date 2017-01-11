@@ -3,13 +3,13 @@ body {
     margin: 0px;
 }
 .space {
-    height: 55vh;
+    height: 60vh;
     background-color: #000000;
     border: 1px solid #CCCCCC;
 }
 .sheet {
     border: 1px solid #CCCCCC;
-    height: 45vh;
+    height: 40vh;
     background-color: #87CEEB;
 }
 canvas {
