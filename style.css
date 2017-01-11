@@ -22,5 +22,6 @@ canvas {
     background-color: #CCCCCC;
     color: #111111;
     font: .8em, arial, sans-serif;
+    border: 1px solid black;
 }
 
