@@ -38,7 +38,7 @@ function initpage() {
 
 function mainLoop () {
         playerEnergy += 100;
-        if (playerEnergy % 1000 = 0) {
+        if (playerEnergy % 1000 == 0) {
                 console.log("Energy: " + playerEnergy);       
         }
 }
