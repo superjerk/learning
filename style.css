@@ -16,9 +16,11 @@ canvas {
     background: #111;
 }
 .dd {
-    padding: 15px;
-    margin: 0 auto;
-    border-spacing: 15px;
+    padding: 10px;
+    margin: 5px;
+    display: inline-block;
     background-color: #CCCCCC;
+    color: #87CEEB;
+    font: .8em, arial, sans-serif;
 }
 
