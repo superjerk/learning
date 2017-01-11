@@ -5,3 +5,4 @@ var EnergyGen = ['Combustion','Fission','Fusion','Solar'],
     MassWep = ['Bulletstorm','Railgun','Missile','Rocket'],	
     EnergyWep = ['Laser','Blaster','Torpedo','Ion Cannon'],	
     PlasmaWep = ['Beam','Blade','Blob','Rope'];
+var shipparts = [EnergyGen,EnergyStor,Hull,Shield,MassWep,EnergyWep,PlasmaWep];
