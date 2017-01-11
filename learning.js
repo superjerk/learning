@@ -39,9 +39,13 @@ function initpage() {
 
 function mainLoop () {
         playerEnergy += 100;
-        if (playerEnergy % 1000 == 0) {
-                console.log("Energy: " + playerEnergy);       
-        }
+        if (playerEnergy >= 100000) {playerEnergy = 100000;}
+        
+        var canvas = document.getElementById("starfield");
+        context = canvas.getContext("2d");
+        context.fillStyle = "White";
+        context.font = "9px monospace";
+        context.fillText("Energy: " + playerEnergy, 20, 20);
 }
 window.onload = initpage;
 setInterval(mainLoop, 100);
