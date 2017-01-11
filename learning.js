@@ -24,7 +24,8 @@ function initpage() {
     }
     //create buttons and dropdowns
     Object.keys(shipparts).forEach(function(key) {
-        document.getElementById("shipsheet").insertAdjacentHTML('beforeend','<div id="' + key + '" class="dd" data-jq-dropdown="#jq-dropdown-1">' + key + '</div>');
+        document.body.insertAdjacentHTML('beforeend','<div id="' + key + '" class="jq-dropdown jq-dropdown-tip"><ul class="jq-dropdown-menu"><li><a href="#1">' + shipparts[key][0] + '</a></li><li><a href="#2">' + shipparts[key][1] + '</a></li><li><a href="#3">' + shipparts[key][2] + '</a></li><li><a href="#4">' + shipparts[key][3] + '</a></li></ul></div>');            
+        document.getElementById("shipsheet").insertAdjacentHTML('beforeend','<div id="' + key + '" class="dd" data-jq-dropdown="#' + key + '">' + key + '</div>');
     });
 }
 window.onload = initpage;
