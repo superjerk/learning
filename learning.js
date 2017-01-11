@@ -1,7 +1,8 @@
 function getRandom(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-function setCanvas() {
+function initpage() {
+    //create canvas
     var canvas = document.getElementById("starfield");
     canvas.style.width='100%';
     canvas.style.height='100%';
@@ -21,10 +22,9 @@ function setCanvas() {
         context.fillStyle = "hsl(" + hue + ", " + sat + "%, 88%)";
         context.fill();
     }
-}
-function createShipparts() {
-        Object.keys(shipparts).forEach(function(key) {
+    //create buttons and dropdowns
+    Object.keys(shipparts).forEach(function(key) {
         document.getElementById("shipsheet").insertAdjacentHTML('beforeend','<div id="' + key + '" class="dd" data-jq-dropdown="#jq-dropdown-1">' + key + '</div>');
-        });
+    });
 }
-window.onload = setCanvas;createShipparts;
+window.onload = initpage;
