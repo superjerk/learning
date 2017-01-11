@@ -23,6 +23,8 @@ canvas {
     color: #111111;
     font: .8em, arial, sans-serif;
     border: 2px solid black;
+    user-select: none;
+    width: 50px;
 }
 .dd:hover {
    border-color: red;
