@@ -22,4 +22,9 @@ function setCanvas() {
         context.fill();
     }
 }
-window.onload = setCanvas;
+function createShipparts() {
+        Object.keys(shipparts).forEach(function(key) {
+        document.getElementById("shipsheet").insertAdjacentHTML('beforeend','<div id="' + key + '" class="dd" data-jq-dropdown="#jq-dropdown-1">' + key + '</div>');
+        });
+}
+window.onload = setCanvas;createShipparts;
