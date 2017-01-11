@@ -1,3 +1,4 @@
+var playerEnergy = 0;
 var EnergyGen = ['Combustion','Fission','Fusion','Solar'], 	
     EnergyStor =['Batteries','Hydrogen','Capacitors','Flywheel'],
     Hull = ['Ferric','Aluminum','Ceramics','Plastics'],
