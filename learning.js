@@ -35,4 +35,12 @@ function initpage() {
                 document.getElementById("shipsheet").insertAdjacentHTML('beforeend','<div id="' + key + '" class="dd" data-jq-dropdown="#' + key + '-jqdd">' + key + '</div>');
         });
 }
+
+function mainLoop () {
+        playerEnergy += 100;
+        if (playerEnergy % 1000 = 0) {
+                console.log("Energy: " + playerEnergy);       
+        }
+}
 window.onload = initpage;
+setInterval(mainLoop, 100);
