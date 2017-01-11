@@ -2,7 +2,7 @@ function getRandom(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 function procClick(click) {
-       alert(click.id);       
+       console.log(click.id);       
 }
 function initpage() {
         //create canvas
