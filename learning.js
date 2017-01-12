@@ -47,5 +47,15 @@ function mainLoop () {
         context.font = "9px monospace";
         context.fillText("Energy: " + playerEnergy, 20, 20);
 }
+function testLoop () {
+        var teststart = (new Date).getTime();
+        console.log(teststart);
+        teststart += 1000;
+        var timeout = teststart - (new Date).getTime();
+        //setTimeout(testLoop(),timeout);
+}
+
 window.onload = initpage;
-setInterval(mainLoop, 100);
+//testLoop();
+//setInterval(mainLoop, 100);
+
