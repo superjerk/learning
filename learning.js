@@ -48,13 +48,15 @@ function mainLoop () {
         context.fillText("Energy: " + playerEnergy, 20, 20);
 }
 function testLoop () {
-        var teststart = (new Date).getTime();
+        teststart = (new Date).getTime();
         console.log(teststart);
         teststart += 1000;
-        var timeout = teststart - (new Date).getTime();
+        timeout = teststart - (new Date).getTime();
         //setTimeout(testLoop(),timeout);
 }
 
+var teststart = 0;
+var timeout = 0;
 window.onload = initpage;
 //testLoop();
 //setInterval(mainLoop, 100);
