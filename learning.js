@@ -56,7 +56,6 @@ function testLoop () {
 }
 
 var teststart = 0;
-var timeout = 0;
 window.onload = initpage;
 //testLoop();
 //setInterval(mainLoop, 100);
