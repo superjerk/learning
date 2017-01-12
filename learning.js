@@ -52,7 +52,7 @@ function testLoop () {
         console.log(teststart);
         teststart += 1000;
         timeout = teststart - (new Date).getTime();
-        //setTimeout(testLoop(),timeout);
+        setTimeout(testLoop,timeout);
 }
 
 var teststart = 0;
