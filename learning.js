@@ -48,11 +48,11 @@ function mainLoop () {
         context.fillText("Energy: " + playerEnergy, 20, 20);
 }
 function testLoop () {
-        teststart = (new Date).getTime();
+        teststart = window.performance.now();
         console.log(teststart);
         teststart += 1000;
         var testObject = ['Test','Test2','Test3'];
-        setTimeout(testLoop,teststart - (new Date).getTime());
+        setTimeout(testLoop,Math.Round(teststart - window.peformance.now));
 }
 
 var teststart = 0;
