@@ -51,8 +51,8 @@ function testLoop () {
         teststart = (new Date).getTime();
         console.log(teststart);
         teststart += 1000;
-        timeout = teststart - (new Date).getTime();
-        setTimeout(testLoop,timeout);
+        var testObject = ['Test','Test2','Test3'];
+        setTimeout(testLoop,teststart - (new Date).getTime());
 }
 
 var teststart = 0;
