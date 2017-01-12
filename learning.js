@@ -52,7 +52,7 @@ function testLoop () {
         console.log(teststart);
         teststart += 1000;
         var testObject = ['Test','Test2','Test3'];
-        setTimeout(testLoop,Math.Round(teststart - window.peformance.now()));
+        setTimeout(testLoop,Math.Round(teststart - window.performance.now()));
 }
 
 var teststart = 0;
