@@ -18,7 +18,9 @@ game.update = function() {
         if (game.globals.last == 0) {
                 game.globals.last = Date.now();       
         }
-        var timeskip = Date.now() - game.globals.last
+        game.globals.time = Date.now();
+        var timeskip = game.globals.time - game.globals.last;
+        game.globals.last = game.globals.time;
         game.playerEnergy += game.playerGen * timeskip
         if (game.playerEnergy > 100000) {game.playerEnergy = 100000;}
 };
