@@ -5,58 +5,76 @@ function procClick(click) {
        console.log(click.id);
        $('trigger').jqDropdown('hide',click.parentElement.parentElement.parentElement) 
 }
-function initpage() {
-        //create canvas
-        var canvas = document.getElementById("starfield");
-        canvas.style.width='100%';
-        canvas.style.height='100%';
-        canvas.width  = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
-        context = canvas.getContext("2d");
-        stars = 300;
-        colorrange = [0,60,240];
-        for (var i = 0; i < stars; i++) {
-                var x = Math.random() * canvas.offsetWidth;
-                y = Math.random() * canvas.offsetHeight,
-                radius = Math.random() * 1.2,
-                hue = colorrange[getRandom(0,colorrange.length - 1)],
-                sat = getRandom(50,100);
-                context.beginPath();
-                context.arc(x, y, radius, 0, 360);
-                context.fillStyle = "hsl(" + hue + ", " + sat + "%, 88%)";
-                context.fill();
+function genstararray(canvas) {
+    colorrange = [0,60,240];
+    stars = 300;
+    while (stars--) {
+        var star = {x: Math.random() * canvas.offsetWidth,y: Math.random() * canvas.offsetHeight,radius: Math.random() * 1.2, hue: colorrange[getRandom(0,colorrange.length - 1)],sat: getRandom(50,100)}
+        game.stararray.push(star);
+   }       
+}
+//end of functions, start game
+game.update = function() {
+        if (game.globals.last == 0) {
+                game.globals.last = Date.now();       
         }
-        //create buttons and dropdowns
-        Object.keys(shipparts).forEach(function(key) {
-                document.body.insertAdjacentHTML('beforeend','<div id="' + key + '-jqdd" class="jq-dropdown jq-dropdown-tip"><ul class="jq-dropdown-menu"><li><a href="#" id="' + shipparts[key][0] +'">' + shipparts[key][0] + '</a></li><li><a href="#" id="' + shipparts[key][1] +'">' + shipparts[key][1] + '</a></li><li><a href="#" id="' + shipparts[key][2] +'">' + shipparts[key][2] + '</a></li><li><a href="#" id="' + shipparts[key][3] +'">' + shipparts[key][3] + '</a></li></ul></div>');            
-                $('#' + shipparts[key][0]).click( function(e) {e.preventDefault(); procClick(this); return false; } );
-                $('#' + shipparts[key][1]).click( function(e) {e.preventDefault(); procClick(this); return false; } );
-                $('#' + shipparts[key][2]).click( function(e) {e.preventDefault(); procClick(this); return false; } );
-                $('#' + shipparts[key][3]).click( function(e) {e.preventDefault(); procClick(this); return false; } );
-                document.getElementById("shipsheet").insertAdjacentHTML('beforeend','<div id="' + key + '" class="dd" data-jq-dropdown="#' + key + '-jqdd">' + key + '</div>');
-        });
-}
+        var timeskip = Date.now() - game.globals.last
+        game.playerEnergy += game.playerGen * timeskip
+        if (game.playerEnergy > 100000) {game.playerEnergy = 100000;}
+};
 
-function mainLoop () {
-        playerEnergy += 100;
-        if (playerEnergy >= 100000) {playerEnergy = 100000;}
+game.draw = function() {
+        this.context.clearRect(0, 0, canvas.width, canvas.height);
+        //draw stars
+        for (i=0;i<=game.stararray.length;i++) {
+                this.context.beginPath();
+                this.context.arc(game.stararray[i].x, game.stararray[i].y, game.stararray[i].radius, 0, 360);
+                this.context.fillStyle = "hsl(" + game.stararray[i].hue + ", " + game.stararray[i].sat + "%, 88%)";
+                this.context.fill();
+        }        
+        //Player energy
+        this.context.fillStyle = "White";
+        this.context.font = "9px monospace";
+        this.context.fillText("Energy: " + game.playerEnergy, 20, 20);
+};
+
+
+game.initialize();
+
+game.run = (function() {
+        var loops = 0, skipTicks = 1000 / game.fps, nextGameTick = Date.now();
+
+        return function() {
+          loops = 0;
+
+          while (Date.now() > nextGameTick) {
+            game.update();
+            nextGameTick += skipTicks;
+            loops++;
+          }
+          game.draw();
+        };//closes return function
+      })();//closes function game.run
+
+(function() {
+        var onEachFrame;
+        if (window.webkitRequestAnimationFrame) {
+          onEachFrame = function(cb) {
+            var _cb = function() { cb(); webkitRequestAnimationFrame(_cb); }
+            _cb();
+          };
+        } else if (window.mozRequestAnimationFrame) {
+          onEachFrame = function(cb) {
+            var _cb = function() { cb(); mozRequestAnimationFrame(_cb); }
+            _cb();
+          };
+        } else {
+          onEachFrame = function(cb) {
+            setInterval(cb, 1000 / 10);
+          }
+        }
         
-        var canvas = document.getElementById("starfield");
-        context = canvas.getContext("2d");
-        context.fillStyle = "White";
-        context.font = "9px monospace";
-        context.fillText("Energy: " + playerEnergy, 20, 20);
-}
-function testLoop () {
-        teststart = window.performance.now();
-        console.log(teststart);
-        teststart += 1000;
-        var testObject = ['Test','Test2','Test3'];
-        setTimeout(testLoop,Math.round(teststart - window.performance.now()));
-}
+        window.onEachFrame = onEachFrame;
+      })();
 
-var teststart = 0;
-window.onload = initpage;
-//testLoop();
-//setInterval(mainLoop, 100);
-
+window.onEachFrame(game.run);
