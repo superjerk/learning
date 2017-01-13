@@ -26,7 +26,7 @@ game.update = function() {
 game.draw = function() {
         this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
         //draw stars
-        for (i=0;i<=game.stararray.length;i++) {
+        for (i=0;i<game.stararray.length;i++) {
                 this.context.beginPath();
                 this.context.arc(game.stararray[i].x, game.stararray[i].y, game.stararray[i].radius, 0, 360);
                 this.context.fillStyle = "hsl(" + game.stararray[i].hue + ", " + game.stararray[i].sat + "%, 88%)";
