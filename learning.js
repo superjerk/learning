@@ -38,9 +38,6 @@ game.draw = function() {
         this.context.fillText("Energy: " + game.playerEnergy, 20, 20);
 };
 
-
-game.initialize();
-
 game.run = (function() {
         var loops = 0, skipTicks = 1000 / game.fps, nextGameTick = Date.now();
 
