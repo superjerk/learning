@@ -77,4 +77,4 @@ game.run = (function() {
         window.onEachFrame = onEachFrame;
       })();
 
-window.onload(window.onEachFrame(game.run));
+//window.onEachFrame(game.run);
