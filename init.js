@@ -1,4 +1,4 @@
-var playerEnergy = 0;
+var game = {globals: {start: 0, time: 0},settings: {speed: 10}};
 var EnergyGen = ['Combustion','Fission','Fusion','Solar'], 	
     EnergyStor =['Batteries','Hydrogen','Capacitors','Flywheel'],
     Hull = ['Ferric','Aluminum','Ceramics','Plastics'],
