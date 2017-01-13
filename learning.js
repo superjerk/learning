@@ -24,7 +24,7 @@ game.update = function() {
 };
 
 game.draw = function() {
-        this.context.clearRect(0, 0, canvas.width, canvas.height);
+        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
         //draw stars
         for (i=0;i<=game.stararray.length;i++) {
                 this.context.beginPath();
