@@ -35,9 +35,18 @@ game.draw = function() {
                 this.context.fill();
         }        
         //Player energy
-        this.context.fillStyle = "White";
-        this.context.font = "9px monospace";
-        this.context.fillText("Energy: " + game.playerEnergy, 20, 20);
+        //this.context.fillStyle = "White";
+        //this.context.font = "9px monospace";
+        //this.context.fillText("Energy: " + game.playerEnergy, 20, 20);
+		this.context.lineJoin = "round";  
+		this.context.lineWidth = "2";  
+		this.context.strokeStyle = '#67AECB';  
+		this.context.strokeRect(10, 10, 18, 140);
+		this.context.fillStyle='#87CEEB';    // color of fill  
+		this.context.fillRect(11, 11, 16, 138); // create rectangle
+		this.context.fillStyle='#111111';    // color of fill  
+		var fill = ((100000 - game.playerEnergy)/100000) * 138
+		this.context.fillRect(11, 11, 16, fill); // create rectangle		
 };
 
 game.run = (function() {
@@ -75,5 +84,4 @@ game.run = (function() {
         
         window.onEachFrame = onEachFrame;
       })();
-
-//window.onEachFrame(game.run);
+	  //testpush
