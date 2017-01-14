@@ -75,3 +75,4 @@ game.run = (function() {
         
         window.onEachFrame = onEachFrame;
       })();
+//test
