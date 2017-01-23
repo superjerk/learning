@@ -52,7 +52,7 @@ game.draw = function() {
 		this.context.fillRect(11, 11, 16, fill); // create rectangle
 	
 	//SHIPS
-	foreach (ship in game.ships) {
+	for (var i = 0, len = game.ships.length; i < len; i++) {
 		ship.x += ship.dx;
 		this.context.drawImage(ship.image,ship.x,ship.y,100,50);
 	}
