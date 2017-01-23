@@ -46,7 +46,10 @@ game.draw = function() {
 		this.context.fillRect(11, 11, 16, 138); // create rectangle
 		this.context.fillStyle='#111111';    // color of fill  
 		var fill = ((100000 - game.playerEnergy)/100000) * 138
-		this.context.fillRect(11, 11, 16, fill); // create rectangle		
+		this.context.fillRect(11, 11, 16, fill); // create rectangle
+	
+	//SHIPS
+	this.context.drawImage(images.blueship,50,50,50,50);
 };
 
 game.run = (function() {
