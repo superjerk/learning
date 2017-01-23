@@ -7,6 +7,21 @@ var EnergyGen = ['Combustion','Fission','Fusion','Solar'],
     EnergyWep = ['Laser','Blaster','Torpedo','Ion Cannon'],	
     PlasmaWep = ['Beam','Blade','Blob','Rope'];
 var shipparts = {EnergyGen: EnergyGen,EnergyStor: EnergyStor,Hull: Hull,Shield: Shield,MassWep: MassWep,EnergyWep: EnergyWep,PlasmaWep: PlasmaWep};
+var sources = {
+        blueship: 'images/blueship.png',
+        wship: 'images/wship.png'
+      };
+var images = {};
+var loadedImages = 0;
+var numImages = 0;
+// get num of sources
+for(var src in sources) {
+    numImages++;
+}
+for(var src in sources) {          
+    images[src] = new Image();
+    images[src].src = sources[src];
+}
 game.stararray = [];
 game.initialize = function() {
     
