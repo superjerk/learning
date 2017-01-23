@@ -23,7 +23,7 @@ game.update = function() {
         game.globals.last = game.globals.time;
         game.playerEnergy += game.playerGen * timeskip
         if (game.playerEnergy > 100000) {game.playerEnergy = 100000;}
-	if (game.ships == null) {
+	if (game.ships.length == 0) {
 		var y = this.context.canvas.height/2
 		game.ships.push({image: images.blueship, x: 0, y: y, dx: 5})	
 	}
