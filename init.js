@@ -1,4 +1,4 @@
-var game = {globals: {start: 0,time: 0,last: 0},fps: 20,playerEnergy: 0, playerGen: 1};
+var game = {globals: {start: 0,time: 0,last: 0},fps: 30,playerEnergy: 0, playerGen: 1};
 var EnergyGen = ['Combustion','Fission','Fusion','Solar'], 	
     EnergyStor =['Batteries','Hydrogen','Capacitors','Flywheel'],
     Hull = ['Ferric','Aluminum','Ceramics','Plastics'],
