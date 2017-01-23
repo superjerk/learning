@@ -24,8 +24,16 @@ game.update = function() {
         game.playerEnergy += game.playerGen * timeskip
         if (game.playerEnergy > 100000) {game.playerEnergy = 100000;}
 	if (game.ships.length == 0) {
-		var y = this.context.canvas.height/2
-		game.ships.push({image: images.blueship, x: 0, y: y, dx: 5})	
+		var y = (this.context.canvas.height/2) - 25
+		game.ships.push({image: images.blueship, x: 0, y: y, dx: 1})	
+	}
+	for (var i = 0, len = game.ships.length; i < len;) {
+		game.ships[i].x += (game.ships[i].dx * timeskip / 1000);
+		if (game.ships[i].x < this.context.canvas.width) {
+			i++;
+		} else {
+			game.ships.splice(i,1);
+		}
 	}
 };
 
@@ -54,8 +62,7 @@ game.draw = function() {
 	
 	//SHIPS
 	for (var i = 0, len = game.ships.length; i < len; i++) {
-		game.ships[i].x += game.ships[i].dx;
-		this.context.drawImage(game.ships[i].image,game.ships[i].x,game.ships[i].y,100,50);
+		this.context.drawImage(game.ships[i].image,game.ships[i].x,game.ships[i].y,90,50)
 	}
 };
 
