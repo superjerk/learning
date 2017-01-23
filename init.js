@@ -22,7 +22,7 @@ for(var src in sources) {
     images[src] = new Image();
     images[src].src = sources[src];
 }
-game.ships = {};
+game.ships = [];
 game.stararray = [];
 game.initialize = function() {
     
